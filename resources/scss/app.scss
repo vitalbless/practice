@@ -1,9 +1,9 @@
-@use "normalize";
-@use "fonts";
-@use "variables";
-@use "utils";
-@use "global";
-@use "./header/style" as *;
+@use "./settings/normalize";
+@use "./settings/fonts";
+@use "./settings/variables";
+@use "./settings/utils";
+@use "./settings/global";
+@use "./features/header/style";
 
 @tailwind base;
 @tailwind components;
