@@ -28,4 +28,33 @@
             display: contents;
         }
     }
+
+    &__menu {
+        &-list {
+            display: flex;
+            column-gap: rem(16);
+            align-items: center;
+
+            @include laptop {
+                column-gap: rem(6);
+            }
+        }
+
+        &-link {
+            color: var(--color-gray-50);
+            padding: rem(14) rem(24);
+            @include laptop {
+                padding: rem(10) rem(18);
+            }
+
+            &.is-active {
+                font-weight: 500;
+                color: var(--color-light);
+                background-color: var(--color-dark);
+                border: rem(1) solid var(--color-dark-20);
+                border-radius: rem(6);
+                pointer-events: none;
+            }
+        }
+    }
 }

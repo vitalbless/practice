@@ -2,7 +2,7 @@
     <ul class="header__menu-list">
         @foreach ($menuItems as $menuItem)
             <li class="header__menu-item">
-                <a href="{{ $menuItem['url'] }}" class="header__menu-link is-active">{{ $menuItem['name'] }}</a>
+                <a href="{{ $menuItem['url'] }}" class="header__menu-link ">{{ $menuItem['name'] }}</a>
             </li>
         @endforeach
     </ul>
