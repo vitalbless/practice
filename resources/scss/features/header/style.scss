@@ -9,6 +9,14 @@
         padding-block: rem(20);
         text-align: center;
         border-bottom: var(--border);
+
+        @include laptop {
+            padding-block: rem(12);
+        }
+
+        @include mobile {
+            padding-block: rem(15);
+        }
     }
 
     &__body {
@@ -27,6 +35,13 @@
         @include mobile-above {
             display: contents;
         }
+
+        &:not(.is-active) {
+            display: none;
+            @include hide;
+
+            translate: 100%;
+        }
     }
 
     &__menu {
@@ -43,6 +58,7 @@
         &-link {
             color: var(--color-gray-50);
             padding: rem(14) rem(24);
+
             @include laptop {
                 padding: rem(10) rem(18);
             }
