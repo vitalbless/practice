@@ -3,7 +3,8 @@
 @use "./settings/variables";
 @use "./settings/utils";
 @use "./settings/global";
-@use "./features/header/style";
+@use "./features/header/header";
+@use "./features/footer/footer";
 
 @tailwind base;
 @tailwind components;

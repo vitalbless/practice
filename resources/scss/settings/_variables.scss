@@ -18,10 +18,17 @@
     --font-family-base: "Inter", sans-serif;
     --font-family-accent: "Kumbh Sans", sans-serif;
 
-    --container-width: #{rem(1600)};
+    --container-width: #{rem(1596)};
     --container-padding-x: #{rem(16)};
 
     --transition-duration: 0.2s;
+
+    --gradient: linear-gradient(
+            45deg,
+            var(--color-dark-15) 64%,
+            var(--color-accent) 136%
+        )
+        border-box;
 
     --border: #{rem(1)} solid var(--color-dark-15);
 
