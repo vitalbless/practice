@@ -1,21 +1,54 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const menuLinks = document.querySelectorAll(".header__menu-link");
+export function createMenu(options) {
+    const defaultOptions = {
+        menuSelector: ".menu",
+        linkSelector: ".menu-link",
+        activeClass: "is-active",
+        storageKey: "activeUrl",
+    };
+    console.log(options);
+    const { menuSelector, linkSelector, activeClass, storageKey } = {
+        ...defaultOptions,
+        ...options,
+    };
 
-    menuLinks.forEach((link) => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault();
+    const menu = document.querySelector(menuSelector);
 
-            menuLinks.forEach((el) => el.classList.remove("is-active"));
-
-            this.classList.add("is-active");
-
-            const url = this.getAttribute("href");
-            localStorage.setItem("activeMenuUrl", url);
-        });
-    });
-
-    const activeUrl = localStorage.getItem("activeMenuUrl");
-    if (activeUrl && link.getAttribute("href") === activeUrl) {
-        link.classList.add("is-active");
+    if (!menu) {
+        console.error(`Меню с селектором ${menu} не найдено`);
+        return;
     }
-});
+
+    const menuLinks = menu.querySelectorAll(linkSelector);
+
+    const setActiveLink = (link) => {
+        menuLinks.forEach((el) => el.classList.remove(activeClass));
+        link.classList.add(activeClass);
+        localStorage.setItem(storageKey, link.getAttribute("href"));
+    };
+
+    const restoreActiveLink = () => {
+        const activeUrl = localStorage.getItem(storageKey);
+        if (activeUrl) {
+            menuLinks.forEach((link) => {
+                if (link.getAttribute("href") === activeUrl) {
+                    link.classList.add(activeClass);
+                }
+            });
+        }
+    };
+
+    const handleMenuClick = (event) => {
+        const link = event.target.closest(linkSelector);
+        if (link) {
+            event.preventDefault();
+            setActiveLink(link);
+        }
+    };
+
+    const init = () => {
+        /*    restoreActiveLink(); */
+        menu.addEventListener("click", handleMenuClick);
+    };
+
+    return { init, restoreActiveLink, setActiveLink };
+}
