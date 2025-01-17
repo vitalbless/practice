@@ -4,7 +4,7 @@ use App\Http\Controllers\LinksManager;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LinksManager::class, 'index'])->name('home');
-Route::get('/blog', function () {
+/* Route::get('/blog', function () {
     return view('pages.home.home');
 })->name('news');
 Route::get('/news', function () {
@@ -19,3 +19,4 @@ Route::get('/resources', function () {
 Route::get('/contact', function () {
     return view('pages.home.home');
 })->name('contact');
+ */

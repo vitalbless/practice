@@ -66,6 +66,6 @@ class LinksManager extends Controller
             ],
         ];
 
-        return view('welcome', compact('menuItems'));
+        return view('pages.home.home', ['menuItems' => $menuItems]);
     }
 }
