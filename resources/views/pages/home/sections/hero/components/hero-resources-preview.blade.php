@@ -2,7 +2,7 @@
     <div class="resources-preview__team team">
         <img src="{{ asset('icons/hero/people.png') }}" alt="" class="team__person" width="60" height="60"
             loading="lazy">
-        <img src="{{ asset('icons/hero/2.png') }}" alt="" class="team__person" width="60" height="60"
+        <img src="{{ asset('icons/hero/2.png') }}" alt="" class="team__person" width="60px" height="60px"
             loading="lazy">
         <img src="{{ asset('icons/hero/3.png') }}" alt="" class="team__person" width="60" height="60"
             loading="lazy">

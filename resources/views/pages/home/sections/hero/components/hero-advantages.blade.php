@@ -1,7 +1,7 @@
-<div class="hero_advantages">
+<div class="hero__advantages">
     <h2 class="visually-hidden">Our advantages</h2>
     <ul class="hero__advantages-list container-no-tailwind">
-        <li class="hero_advantages-item">
+        <li class="hero__advantages-item">
             <div class="advantage-card">
                 <img src="{{ asset('icons/hero/img-icon3.svg') }}" alt="" class="advantage-card__image"
                     loading="lazy" width="50" height="50">
@@ -12,7 +12,7 @@
                 <p class="advantage-card__details">Over 1,000 articles published monthly</p>
             </div>
         </li>
-        <li class="hero_advantages-item">
+        <li class="hero__advantages-item">
             <div class="advantage-card">
                 <img src="{{ asset('icons/hero/img-icon.svg') }}" alt="" class="advantage-card__image"
                     loading="lazy" width="50" height="50">
@@ -23,7 +23,7 @@
                 <p class="advantage-card__details">50+ renowned AI experts on our team</p>
             </div>
         </li>
-        <li class="hero_advantages-item">
+        <li class="hero__advantages-item">
             <div class="advantage-card">
                 <img src="{{ asset('icons/hero/img-icon2.svg') }}" alt="" class="advantage-card__image"
                     loading="lazy" width="50" height="50">
