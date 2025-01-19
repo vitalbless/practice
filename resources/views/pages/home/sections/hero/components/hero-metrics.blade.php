@@ -1,4 +1,4 @@
-<div class="hero__metrics metrics">
+<div class="hero__metrics metrics full-vw-line full-vw-line--top full-vw-line--left">
     <dl class="metrics__list">
         <div class="metrics__item">
             <dt class="metrics__key">Resources available</dt>
