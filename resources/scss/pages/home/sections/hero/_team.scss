@@ -13,6 +13,10 @@
         padding: rem(8);
     }
 
+    @include tablet {
+        --personImageSize: #{rem(40)};
+    }
+
     &__person {
         width: var(--personImageSize);
         height: var(--personImageSize);

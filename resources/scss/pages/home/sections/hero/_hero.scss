@@ -6,9 +6,11 @@
 
 .hero {
     &__main {
-        display: grid;
-        grid-template-columns: 60% auto;
-        grid-template-areas: "body resources-preview" "metrics resources-preview";
+        @include tablet-above {
+            display: grid;
+            grid-template-columns: 60% auto;
+            grid-template-areas: "body resources-preview" "metrics resources-preview";
+        }
     }
 
     &__body {
@@ -21,6 +23,12 @@
             padding-top: rem(100);
             padding-right: rem(40);
         }
+
+        @include tablet {
+            padding-top: rem(40);
+            padding-bottom: rem(30);
+            padding-right: 0;
+        }
     }
 
     &__subtitle {
@@ -32,25 +40,42 @@
 
         &:not(:last-child) {
             margin-bottom: rem(30);
+
+            @include laptop {
+                margin-bottom: rem(14);
+            }
         }
     }
 
     &__title {
         &:not(:last-child) {
             margin-bottom: rem(20);
+
+            @include laptop {
+                margin-bottom: rem(10);
+            }
         }
     }
 
     &__metrics {
         grid-area: metrics;
-        border-top: var(--border);
+
+        @include tablet-above {
+            border-top: var(--border);
+        }
+
+        @include tablet {
+            &::before {
+                width: 100vw;
+                right: calc(var(--container-padding-x) * -1);
+            }
+        }
     }
 
     &__resources-preview {
         grid-area: resources-preview;
         padding-left: rem(80);
         padding-bottom: rem(80);
-        border-left: var(--border);
         background: url("../../../../../../public/icons/hero/bg.png") 0 0 /
             cover no-repeat;
 
@@ -58,14 +83,30 @@
             padding-left: rem(50);
             padding-bottom: rem(50);
         }
+
+        @include tablet {
+            width: 100vw;
+            margin-left: calc(var(--container-padding-x) * -1);
+            padding: rem(100) rem(40) rem(40);
+            background-image: url("../../../../../../public/icons/hero/bg_tablet.png");
+            background-size: contain;
+        }
+
+        @include tablet-above {
+            border-left: var(--border);
+        }
     }
 
     &__advantages {
-        border-block: var(--border);
+        @include tablet-above {
+            border-block: var(--border);
+        }
 
         &-list {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            @include tablet-above {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         &-item {
@@ -79,13 +120,23 @@
                 padding-block: rem(40);
             }
 
-            &:not(:first-child) {
-                padding-left: var(--paddingX);
+            @include tablet-above {
+                &:not(:first-child) {
+                    padding-left: var(--paddingX);
+                }
+
+                &:not(:last-child) {
+                    padding-right: var(--paddingX);
+                    border-right: var(--border);
+                }
             }
 
-            &:not(:last-child) {
-                padding-right: var(--paddingX);
-                border-right: var(--border);
+            @include tablet {
+                padding-block: rem(30);
+
+                &:not(:last-child) {
+                    border-bottom: var(--border);
+                }
             }
         }
     }
