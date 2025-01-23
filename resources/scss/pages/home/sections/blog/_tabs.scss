@@ -1,0 +1,67 @@
+@use "../../../../helpers" as *;
+
+.tabs {
+    &__header {
+        border-bottom: var(--border);
+    }
+
+    &__buttons {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        column-gap: rem(20);
+        padding-block: fluid(50, 20);
+        overflow-x: auto;
+        scrollbar-width: none; // Скрываем скроллбар в Firefox
+        -ms-overflow-style: none; // Скрываем скроллбар в IE и Edge
+
+        &::-webkit-scrollbar {
+            display: none; // Скрываем скроллбар в Chrome, Safari и Opera
+        }
+
+        @include laptop {
+            column-gap: rem(14);
+        }
+    }
+
+    &__button {
+        padding: fluid(30, 18) rem(11);
+        border: var(--border);
+        color: var(--color-gray-60);
+        background-color: transparent;
+        border-radius: rem(8);
+        font-size: rem(18);
+        white-space: nowrap;
+
+        @include laptop {
+            font-size: rem(14);
+        }
+
+        @include mobile {
+            min-width: rem(151);
+            max-height: rem(57);
+        }
+
+        @include hover {
+            color: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+
+        &.is-active {
+            color: var(--color-light);
+            font-weight: 500;
+            background-color: var(--color-dark-10);
+            pointer-events: none;
+        }
+    }
+
+    &__content {
+        &:not(.is-active) {
+            display: none;
+        }
+
+        &:focus-visible {
+            outline-offset: -1rem;
+        }
+    }
+}
