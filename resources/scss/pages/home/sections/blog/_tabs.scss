@@ -3,6 +3,13 @@
 .tabs {
     &__header {
         border-bottom: var(--border);
+        overflow-x: auto;
+        scrollbar-width: none; // Скрываем скроллбар в Firefox
+        -ms-overflow-style: none; // Скрываем скроллбар в IE и Edge
+
+        &::-webkit-scrollbar {
+            display: none; // Скрываем скроллбар в Chrome, Safari и Opera
+        }
     }
 
     &__buttons {
@@ -11,16 +18,13 @@
         grid-auto-columns: 1fr;
         column-gap: rem(20);
         padding-block: fluid(50, 20);
-        overflow-x: auto;
-        scrollbar-width: none; // Скрываем скроллбар в Firefox
-        -ms-overflow-style: none; // Скрываем скроллбар в IE и Edge
-
-        &::-webkit-scrollbar {
-            display: none; // Скрываем скроллбар в Chrome, Safari и Opera
-        }
 
         @include laptop {
             column-gap: rem(14);
+        }
+
+        @include tablet {
+            width: max-content;
         }
     }
 
