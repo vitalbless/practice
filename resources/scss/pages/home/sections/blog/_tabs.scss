@@ -41,11 +41,6 @@
             font-size: rem(14);
         }
 
-        @include mobile {
-            min-width: rem(151);
-            max-height: rem(57);
-        }
-
         @include hover {
             color: var(--color-accent);
             border-color: var(--color-accent);

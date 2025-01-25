@@ -24,11 +24,71 @@ class Tabs {
         this.contentElements = this.rootElement.querySelectorAll(
             this.selectors.content
         );
-        this.state = { activeTabIndex: [...this.buttonElements] }.findIndex(
-            (buttonElement) =>
-                buttonElement.classList.contains(this.stateClasses.isActive)
-        );
+        this.state = {
+            activeTabIndex: [...this.buttonElements].findIndex(
+                (buttonElement) =>
+                    buttonElement.classList.contains(this.stateClasses.isActive)
+            ),
+        };
         this.limitTabsIndex = this.buttonElements.length - 1;
+        this.bindEvents();
+    }
+
+    updateUI() {
+        const { activeTabIndex } = this.state;
+
+        this.buttonElements.forEach((buttonElement, index) => {
+            const isActive = index === activeTabIndex;
+
+            buttonElement.classList.toggle(
+                this.stateClasses.isActive,
+                isActive
+            );
+            buttonElement.setAttribute(
+                this.stateAttributes.ariaSelected,
+                isActive.toString()
+            );
+            buttonElement.setAttribute(
+                this.stateAttributes.tabIndex,
+                isActive ? "0" : "1"
+            );
+        });
+
+        this.contentElements.forEach((contentElement, index) => {
+            const isActive = index === activeTabIndex;
+
+            contentElement.classList.toggle(
+                this.stateClasses.isActive,
+                isActive
+            );
+        });
+    }
+
+    onButtonClick(buttonIndex) {
+        this.state.activeTabIndex = buttonIndex;
+        this.updateUI();
+    }
+
+    onKeyDown = (event) => {
+        const { code, metaKey } = event;
+
+        const action = {
+            ArrowLeft: this.previousTab,
+            ArrowRight: this.nextTab,
+            Home: this.firstTab,
+            End: this.lastTab,
+        }[code];
+
+        action?.();
+    };
+
+    bindEvents() {
+        this.buttonElements.forEach((buttonElement, index) => {
+            buttonElement.addEventListener("click", () =>
+                this.onButtonClick(index)
+            );
+        });
+        this.rootElement.addEventListener("keydown", this.onKeyDown);
     }
 }
 
