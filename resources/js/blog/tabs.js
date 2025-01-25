@@ -79,6 +79,18 @@ class Tabs {
             End: this.lastTab,
         }[code];
 
+        const isMacHomeKey = metaKey && code === "ArrowLeft";
+        if (isMacHomeKey) {
+            this.firstTab();
+            return;
+        }
+
+        const isMacEndKey = metaKey && code === "ArrowRight";
+        if (isMacEndKey) {
+            this.lastTab();
+            return;
+        }
+
         action?.();
     };
 
