@@ -64,6 +64,35 @@ class Tabs {
         });
     }
 
+    activeTab(newTabIndex) {
+        this.state.activeTabIndex = newTabIndex;
+        this.buttonElements[newTabIndex].focus();
+    }
+
+    previousTab = () => {
+        const newTabIndex =
+            this.state.activeTabIndex === 0
+                ? this.limitTabsIndex
+                : this.state.activeTabIndex - 1;
+        this.activeTab(newTabIndex);
+    };
+
+    nextTab = () => {
+        const newTabIndex =
+            this.state.activeTabIndex === this.limitTabsIndex
+                ? 0
+                : this.state.activeTabIndex + 1;
+        this.activeTab(newTabIndex);
+    };
+
+    firstTab = () => {
+        this.activeTab(0);
+    };
+
+    lastTab = () => {
+        this.activeTab(this.limitTabsIndex);
+    };
+
     onButtonClick(buttonIndex) {
         this.state.activeTabIndex = buttonIndex;
         this.updateUI();
@@ -82,16 +111,21 @@ class Tabs {
         const isMacHomeKey = metaKey && code === "ArrowLeft";
         if (isMacHomeKey) {
             this.firstTab();
+            this.updateUI();
             return;
         }
 
         const isMacEndKey = metaKey && code === "ArrowRight";
         if (isMacEndKey) {
             this.lastTab();
+            this.updateUI();
             return;
         }
 
-        action?.();
+        if (action) {
+            action();
+            this.updateUI();
+        }
     };
 
     bindEvents() {
