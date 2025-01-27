@@ -17,7 +17,7 @@
         border-radius: rem(8);
     }
 
-    &:hover {
+    @include hover {
         color: var(--color-accent);
         background-color: var(--color-dark-10);
         border-color: var(--color-accent);
@@ -28,5 +28,9 @@
         color: var(--color-dark);
         font-weight: 500;
         border-radius: rem(10);
+    }
+
+    &--dark-gray {
+        background-color: var(--color-dark-10);
     }
 }
