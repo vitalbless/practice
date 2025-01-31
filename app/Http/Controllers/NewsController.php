@@ -8,6 +8,15 @@ class NewsController extends Controller
 {
     public function index()
     {
-        return view('pages.news.news');
+        $menuItems = config('menu');  // Загружаем данные из конфигурации
+
+        // Генерируем полные URL-ы в контроллере, если это необходимо
+        foreach ($menuItems as &$item) {
+            if ($item['url'] == '/news') {
+                $item['url'] = route('news');
+            }
+        }
+
+        return view('pages.news.news', compact('menuItems'));
     }
 }

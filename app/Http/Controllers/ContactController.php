@@ -8,6 +8,15 @@ class ContactController extends Controller
 {
     public function index()
     {
-        return view('pages.contacts.contacts');
+        $menuItems = config('menu');  // Загружаем данные из конфигурации
+
+        // Генерируем полные URL-ы в контроллере, если это необходимо
+        foreach ($menuItems as &$item) {
+            if ($item['url'] == '/contacts') {
+                $item['url'] = route('contacts');
+            }
+        }
+
+        return view('pages.contacts.contacts', compact('menuItems'));
     }
 }

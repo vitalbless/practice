@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class HomeController extends Controller
 {
     public function index()
     {
@@ -12,11 +12,11 @@ class BlogController extends Controller
 
         // Генерируем полные URL-ы в контроллере, если это необходимо
         foreach ($menuItems as &$item) {
-            if ($item['url'] == '/blog') {
-                $item['url'] = route('blog');
+            if ($item['url'] == '/') {
+                $item['url'] = route('home');
             }
         }
 
-        return view('pages.blog.blog', compact('menuItems'));
+        return view('pages.home.home', compact('menuItems'));
     }
 }

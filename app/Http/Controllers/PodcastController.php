@@ -8,6 +8,15 @@ class PodcastController extends Controller
 {
     public function index()
     {
-        return view('pages.podcast.podcast');
+        $menuItems = config('menu');  // Загружаем данные из конфигурации
+
+        // Генерируем полные URL-ы в контроллере, если это необходимо
+        foreach ($menuItems as &$item) {
+            if ($item['url'] == '/podcast') {
+                $item['url'] = route('podcast');
+            }
+        }
+
+        return view('pages.podcast.podcast', compact('menuItems'));
     }
 }
