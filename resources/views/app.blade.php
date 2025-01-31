@@ -17,6 +17,7 @@
     <main>
         @yield('content')
     </main>
+    @include('layout.about')
     @include('layout.footer')
 </body>
 
