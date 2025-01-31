@@ -5,7 +5,7 @@
             <div class="advantage-card">
                 <img src="{{ asset('icons/hero/img-icon3.svg') }}" alt="" class="advantage-card__image"
                     loading="lazy" width="50" height="50">
-                <a href="/" class="advantage-card__link">
+                <a href="/" class="advantage-card__link circle-icon">
                     <h3 class="advantage-card__title h6">Latest News Updates</h3>
                     <p class="advantage-card__subtitle">Stay Current</p>
                 </a>
@@ -16,7 +16,7 @@
             <div class="advantage-card">
                 <img src="{{ asset('icons/hero/img-icon.svg') }}" alt="" class="advantage-card__image"
                     loading="lazy" width="50" height="50">
-                <a href="/" class="advantage-card__link">
+                <a href="/" class="advantage-card__link circle-icon">
                     <h3 class="advantage-card__title h6">Expert Contributors</h3>
                     <p class="advantage-card__subtitle">Trusted Insights</p>
                 </a>
@@ -27,7 +27,7 @@
             <div class="advantage-card">
                 <img src="{{ asset('icons/hero/img-icon2.svg') }}" alt="" class="advantage-card__image"
                     loading="lazy" width="50" height="50">
-                <a href="/" class="advantage-card__link">
+                <a href="/" class="advantage-card__link circle-icon">
                     <h3 class="advantage-card__title h6">Global Readership</h3>
                     <p class="advantage-card__subtitle">Worldwide Impact</p>
                 </a>
