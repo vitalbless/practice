@@ -29,6 +29,14 @@
                 }
             }
         }
+
+        @include mobile {
+            --columns: 1;
+
+            .bordered-grid__item:not(:last-child) {
+                border-bottom: var(--border);
+            }
+        }
     }
 
     &--3-cols {
