@@ -22,7 +22,7 @@ class LinksManager extends Controller
             ],
             [
                 'name' => 'News',
-                'url' => route('home'),
+                'url' => route('news'),
                 'subItems' => [
                     ['name' => 'Trending Stories', 'url' => route('home') . '#trending-stories'],
                     ['name' => 'Featured Videos', 'url' => route('home') . '#featured-videos'],
@@ -33,8 +33,8 @@ class LinksManager extends Controller
                 ],
             ],
             [
-                'name' => 'Blogs',
-                'url' => route('home'),
+                'name' => 'Blog',
+                'url' => route('blog'),
                 'subItems' => [
                     ['name' => 'Quantum Computing', 'url' => route('home') . '#episodes'],
                     ['name' => 'AI Ethics', 'url' => route('home') . '#hosts'],
@@ -46,7 +46,7 @@ class LinksManager extends Controller
             ],
             [
                 'name' => 'Podcast',
-                'url' => route('home'),
+                'url' => route('podcast'),
                 'subItems' => [
                     ['name' => 'AI Revolution', 'url' => route('home') . '#ai-revolution'],
                     ['name' => 'AI News', 'url' => route('home') . '#ai-news'],
@@ -56,7 +56,7 @@ class LinksManager extends Controller
             ],
             [
                 'name' => 'Resources',
-                'url' => route('home'),
+                'url' => route('resources'),
                 'subItems' => [
                     ['name' => 'Whitepapers', 'url' => route('home') . '#whitepapers'],
                     ['name' => 'Ebooks', 'url' => route('home') . '#ebooks'],

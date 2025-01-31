@@ -40,7 +40,6 @@ export function createMenu(options) {
     const handleMenuClick = (event) => {
         const link = event.target.closest(linkSelector);
         if (link) {
-            event.preventDefault();
             setActiveLink(link);
         }
     };

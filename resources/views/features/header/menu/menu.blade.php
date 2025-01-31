@@ -7,4 +7,4 @@
         @endforeach
     </ul>
 </nav>
-<a href="{{ route('home') }}" class="header__contact-us-link button button-accent">Contact Us</a>
+<a href="{{ route('contacts') }}" class="header__contact-us-link button button-accent">Contact Us</a>
