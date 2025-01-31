@@ -1,7 +1,10 @@
 @use "./sections/climate/hero-alt";
 @use "./sections/climate/summary";
 @use "./sections/climate/news_card";
+@use "./sections/videos/video-card";
+@use "./sections/videos/video-player";
 @use "../../../scss/helpers" as *;
+
 .news {
     display: grid;
     row-gap: rem(80);
