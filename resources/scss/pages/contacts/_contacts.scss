@@ -6,3 +6,9 @@
 @use "field";
 @use "feedback-form";
 @use "select";
+
+.contacts {
+    &__header {
+        border-bottom: var(--border);
+    }
+}
