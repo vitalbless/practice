@@ -42,4 +42,10 @@
             background-image: url("../../../../public/icons/header/yellow.svg");
         }
     }
+
+    &--gray-arrow-down {
+        &::after {
+            background-image: url("../../../../public/icons/blog-details/arrow-down_gray.svg");
+        }
+    }
 }
