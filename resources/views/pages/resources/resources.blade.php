@@ -4,4 +4,5 @@
 
 @section('content')
     @include('pages.resources.sections.resources-hero.resources-title')
+    @include('pages.resources.sections.resources-body.resources-body')
 @endsection
