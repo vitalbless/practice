@@ -132,8 +132,9 @@
             grid-template-areas:
                 "other link"
                 "other link";
-            column-gap: rem(20);
+
             align-items: center;
+            gap: fluid(14, 10) rem(20);
         }
 
         &:not(.tile) {
