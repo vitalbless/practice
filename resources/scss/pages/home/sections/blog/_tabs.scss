@@ -26,6 +26,30 @@
         @include tablet {
             width: max-content;
         }
+
+        &--compact {
+            display: inline-flex;
+            column-gap: rem(10);
+            padding: rem(10);
+            border-radius: rem(10);
+            background-color: var(--color-dark);
+
+            .tabs__button {
+                padding: rem(18) rem(38);
+
+                &.is-active {
+                    background-color: var(--color-dark-15);
+                }
+
+                @include laptop {
+                    padding: rem(14) rem(24);
+                }
+
+                @include mobile {
+                    padding: rem(14) rem(13);
+                }
+            }
+        }
     }
 
     &__button {
