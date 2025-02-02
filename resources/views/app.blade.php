@@ -8,7 +8,7 @@
     <meta name="keywords" content="ключевые слова, для, seo">
 
     <title>@yield('title', 'Practice')</title>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/7.6.1/imask.min.js" defer></script>
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
 
